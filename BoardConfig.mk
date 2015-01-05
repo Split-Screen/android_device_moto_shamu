@@ -187,4 +187,7 @@ TARGET_USE_ION_COMPAT := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# CMHW
+BOARD_HARDWARE_CLASS := device/moto/shamu/cmhw
+
 -include vendor/motorola/shamu/BoardConfigVendor.mk
