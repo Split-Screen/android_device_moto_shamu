@@ -506,6 +506,8 @@ service gsiff_daemon /system/vendor/bin/gsiff_daemon
 
 on property:sys.boot_completed=1
     start qcom-post-boot
+    # Restart mm-qcamera-daemon to make sure it's properly initialized
+    restart qcamerasvr
 
 on property:ro.debuggable=1
     start ss_ramdump
