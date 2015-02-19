@@ -128,6 +128,15 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys3/recovery_policy "skip_restart"
 
+    # sensor_ind wakelock (0=disable, 1=stock)
+    write /sys/module/wakeup/parameters/enable_si_ws "0"
+    # smb135x wakelock (0=disable, 1=stock)
+    write /sys/module/smb135x_charger/parameters/use_wlock "0"
+    # wlan_rx wakelock (1=stock, 2-8=lower wake time)
+    write /sys/module/xhci_hcd/parameters/wl_divide "1"
+    # msm_hsic wakelock (0=disable, 1=stock, 2-8=lower wake time)
+    write /sys/module/bcmdhd/parameters/wl_divide "0"
+
 on boot
     insmod /system/lib/modules/adsprpc.ko
     insmod /system/lib/modules/mhi.ko
