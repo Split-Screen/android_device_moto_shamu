@@ -137,6 +137,8 @@ on early-boot
     # msm_hsic wakelock (0=disable, 1=stock, 2-8=lower wake time)
     write /sys/module/bcmdhd/parameters/wl_divide "0"
 
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/devfreq/fdb00000.qcom,kgsl-3d0/governor "simple_ondemand"
+
 on boot
     insmod /system/lib/modules/adsprpc.ko
     insmod /system/lib/modules/mhi.ko
