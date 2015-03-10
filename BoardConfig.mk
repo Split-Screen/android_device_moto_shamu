@@ -165,6 +165,9 @@ BOARD_SEPOLICY_UNION += \
         genfs_contexts \
         service_contexts
 
+#Set SELinux to permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 HAVE_ADRENO_SOURCE:= false
 
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
