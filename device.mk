@@ -21,7 +21,7 @@
 
 
 PRODUCT_COPY_FILES += \
-    device/moto/shamu/twrp.fstab:root/etc/twrp.fstab
+    device/moto/shamu/twrp.fstab:recovery/root/etc/twrp.fstab
 
 PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.rc:root/init.shamu.rc \
