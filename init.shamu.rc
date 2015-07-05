@@ -130,10 +130,12 @@ on early-boot
     write /sys/module/wakeup/parameters/enable_si_ws "0"
     # smb135x wakelock (0=disable, 1=stock)
     write /sys/module/smb135x_charger/parameters/use_wlock "0"
-    # wlan_rx wakelock (1=stock, 2-8=lower wake time)
-    write /sys/module/xhci_hcd/parameters/wl_divide "8"
     # msm_hsic wakelock (0=disable, 1=stock, 2-8=lower wake time)
-    write /sys/module/bcmdhd/parameters/wl_divide "0"
+    write /sys/module/xhci_hcd/parameters/wl_divide "8"
+    # wlan_rx wakelock (1=stock, 2-8=lower wake time)
+    write /sys/module/bcmdhd/parameters/wlrx_divide "8"
+    # wlan_ctrl wakelock (1=stock, 2-8=lower wake time)
+    write /sys/module/bcmdhd/parameters/wlctrl_divide "8"
 
     write /sys/devices/fdb00000.qcom,kgsl-3d0/devfreq/fdb00000.qcom,kgsl-3d0/governor "simple_ondemand"
 
