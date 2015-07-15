@@ -8,11 +8,6 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-# Media override AOSP to include ffmpeg
-PRODUCT_COPY_FILES += \
-    device/moto/shamu/media_codecs_ffmpeg.xml:system/etc/media_codecs.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml
-
 # Inherit device configuration
 $(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 
